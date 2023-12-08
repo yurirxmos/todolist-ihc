@@ -1,18 +1,27 @@
 :root {
-    --primary: #181818;
-    --secondary: #333333;
-    --thirdy: #9600db80;
+    --grey: #4d4d4d;
+    --taskbg: #131313;
+    --bg: #232323;
+    --offwhite-selected: #9c9c9c;
     --offwhite: #f0f0f0;
+    --add : #39852a;
+    --remove : #852a2a;
 }
 
 body {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
-    background-color: var(--primary);
+    flex-direction: column;
+    background-color: var(--bg);
     font-family: 'Inter', sans-serif;
     margin: 0;
     height: 100vh;
+    color: var(--offwhite);
+}
+
+h1, h2, h3, small {
+    margin: 0;
 }
 
 .footer {
@@ -20,7 +29,6 @@ body {
     text-align: center;
     position: fixed;
     bottom: 20px;
-    color: white;
     font-size: 13px;
     opacity: 50%;
 }
@@ -32,17 +40,177 @@ body {
 }
 
 .footer a:hover {
-    color: var(--thirdy);
+    color: var(--offwhite);
 }
 
 .header {
-    margin: 0;
-    position: absolute;
+    margin: 3rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    background-color: var(--bg);
+    width: 100%;
+    z-index: 999999;
+}
+
+.header div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header h1 {
+    font-weight: 1000;
+}
+
+.header small {
+    font-size: 11px;
+    opacity: 50%;
+}
+
+.header input {
+    background-color: transparent;
+    border: none;
+    border-left: solid 5px white;
+    padding: 0.5rem;
+    width: 250px;
+    color: var(--offwhite);
+}
+
+.header input:focus {
+    outline: none;
+    border-left: solid 5px rgb(148, 148, 148);
+}
+
+.item {
     display: flex;
     justify-content: center;
     align-items: start;
     flex-direction: column;
-
-    top: 10px;
-    left: 10px;
+    min-width: 800px;
+    padding: 1rem 3rem;
+    border-radius: 20px;
+    background-color: var(--taskbg);
+    margin: 2rem 0;
 }
+
+.tasks input {
+    background-color: transparent;
+    border: none;
+    border-left: solid 5px var(--offwhite);
+    padding-left: 1rem;
+    color: var(--offwhite);
+    font-size: 17px;
+}
+
+
+.tasks input#task-description {
+    background-color: transparent;
+    border: none;
+    padding: 0.5rem;
+    width: 100%;
+    color: var(--offwhite);
+    font-size: 17px;
+}
+
+.tasks input:focus {
+    outline: none;
+    border-left: solid 5px rgb(148, 148, 148);
+}
+
+.tasks input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+.tasks hr {
+    width: 100%;
+    opacity: 10%;
+    margin: 1rem 0;
+}
+
+.item div {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+
+.taskItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.taskItem button {
+    margin-left: auto; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    background-color: transparent;
+    color: var(--offwhite);
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.taskItem button:hover {
+    transition: 600ms;
+    background-color: var(--taskbg);
+    cursor: pointer;
+}
+
+.taskItem img {
+    filter: invert(1);
+    width: 13px;
+}
+
+.btn {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.btn button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--grey);
+    color: var(--offwhite);
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.btn button:hover {
+    transition: 600ms;
+    background-color: var(--taskbg);
+    cursor: pointer;
+}
+
+.btn img {
+    filter: invert(1);
+    width: 13px;
+}
+
+#btnAdd:hover {
+    background-color: var(--add);
+}
+
+#btnRemove:hover {
+    background-color: var(--remove);
+}
+
